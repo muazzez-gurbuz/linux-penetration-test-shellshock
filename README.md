@@ -30,11 +30,9 @@
 
 ## Attack Narrative (Screenshots)
 
+A small, representative set of screenshots is included below — one or two per phase, enough to show the methodology without a full step-by-step solve guide.
+
 ### Reconnaissance
-
-![Ping sweep confirming the target is live](01-ping-target.png)
-
-![Initial Nmap scan of the target](02-nmap-quick-scan.png)
 
 ![Nmap service and version scan revealing vsftpd, OpenSSH, Apache, MySQL, Tomcat, and more](03-nmap-service-scan.png)
 
@@ -46,40 +44,19 @@
 
 ![Nessus scan summary — 5 critical, 14 high, 6 medium, 2 low findings](05-nessus-scan-summary.png)
 
-![Nessus host severity breakdown](06-nessus-host-severity.png)
-
-![Nessus vulnerability list including the GNU Bash (Shellshock) finding](07-nessus-vuln-list.png)
-
-![Apache Tomcat findings in Nessus](08-nessus-tomcat-findings.png)
-
 ![Nessus detail on the Shellshock (CVE-2014-6271) vulnerability, CVSS 9.8](09-nessus-shellshock-finding.png)
 
 ### Initial Access
 
 ![Confirming shell access as www-data via Meterpreter](10-meterpreter-whoami.png)
 
-![Dropping into an interactive shell from Meterpreter](11-meterpreter-shell.png)
-
-![Confirming user context and working directory](12-shell-id-pwd.png)
-
 ### Privilege Escalation
 
 ![local_exploit_suggester enumerating potential privilege escalation paths](13-local-exploit-suggester.png)
-*Methodical approach: several candidate exploits (CVE-2022-0847 DirtyPipe, pkexec, su_login, and others) were identified and tested in turn.*
-
-![A DirtyPipe exploit attempt that did not yield a session](14-dirtypipe-attempt.png)
-
-![A pkexec exploit attempt that also failed](15-pkexec-attempt.png)
-*Not every attempt succeeds — trial and error against multiple candidate paths is part of the real process.*
+*Methodical approach: several candidate exploits (CVE-2022-0847 DirtyPipe, pkexec, su_login, and others) were identified and tested in turn — not every attempt succeeds; trial and error against multiple candidate paths is part of the real process.*
 
 ![Manual SUID binary enumeration on the target](16-suid-enumeration.png)
 *Manual enumeration of SUID binaries — identified a misconfigured SUID bit on `/usr/bin/find`, the path that led to successful privilege escalation (see Key Findings for details).*
-
-### Credential Access
-
-![Locating the wordlist used for offline password cracking](17-wordlist-locate.png)
-
-![Downloading the wordlist for local cracking](18-wordlist-download.png)
 
 
 ## Key Findings
