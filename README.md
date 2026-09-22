@@ -104,7 +104,7 @@
 
 The difference reflects the additional visibility provided by authenticated checks; finding counts alone do not establish the number of unique vulnerabilities or their business risk.
 
-Consistent with our separate [Vulnerability Assessment project](https://github.com/muazzez-gurbuz/vulnerability-assessment-nmap-nessus): credentialed scanning surfaced dramatically more — and more severe — findings than an external, unauthenticated view alone.
+Consistent with our separate [Vulnerability Assessment project](https://github.com/muazzez-gurbuz/nmap-nessus-vulnerability-assessment): credentialed scanning surfaced dramatically more — and more severe — findings than an external, unauthenticated view alone.
 
 ## Tools Used
 
