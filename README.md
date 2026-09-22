@@ -32,54 +32,54 @@
 
 ### Reconnaissance
 
-![Ping sweep confirming the target is live](pentest-screenshots/01-ping-target.png)
+![Ping sweep confirming the target is live](01-ping-target.png)
 
-![Initial Nmap scan of the target](pentest-screenshots/02-nmap-quick-scan.png)
+![Initial Nmap scan of the target](02-nmap-quick-scan.png)
 
-![Nmap service and version scan revealing vsftpd, OpenSSH, Apache, MySQL, Tomcat, and more](pentest-screenshots/03-nmap-service-scan.png)
+![Nmap service and version scan revealing vsftpd, OpenSSH, Apache, MySQL, Tomcat, and more](03-nmap-service-scan.png)
 
 ### FTP Enumeration
 
-![Anonymous FTP login succeeding on the target](pentest-screenshots/04-ftp-anonymous-login.png)
+![Anonymous FTP login succeeding on the target](04-ftp-anonymous-login.png)
 
 ### Vulnerability Scanning (Nessus)
 
-![Nessus scan summary — 5 critical, 14 high, 6 medium, 2 low findings](pentest-screenshots/05-nessus-scan-summary.png)
+![Nessus scan summary — 5 critical, 14 high, 6 medium, 2 low findings](05-nessus-scan-summary.png)
 
-![Nessus host severity breakdown](pentest-screenshots/06-nessus-host-severity.png)
+![Nessus host severity breakdown](06-nessus-host-severity.png)
 
-![Nessus vulnerability list including the GNU Bash (Shellshock) finding](pentest-screenshots/07-nessus-vuln-list.png)
+![Nessus vulnerability list including the GNU Bash (Shellshock) finding](07-nessus-vuln-list.png)
 
-![Apache Tomcat findings in Nessus](pentest-screenshots/08-nessus-tomcat-findings.png)
+![Apache Tomcat findings in Nessus](08-nessus-tomcat-findings.png)
 
-![Nessus detail on the Shellshock (CVE-2014-6271) vulnerability, CVSS 9.8](pentest-screenshots/09-nessus-shellshock-finding.png)
+![Nessus detail on the Shellshock (CVE-2014-6271) vulnerability, CVSS 9.8](09-nessus-shellshock-finding.png)
 
 ### Initial Access
 
-![Confirming shell access as www-data via Meterpreter](pentest-screenshots/10-meterpreter-whoami.png)
+![Confirming shell access as www-data via Meterpreter](10-meterpreter-whoami.png)
 
-![Dropping into an interactive shell from Meterpreter](pentest-screenshots/11-meterpreter-shell.png)
+![Dropping into an interactive shell from Meterpreter](11-meterpreter-shell.png)
 
-![Confirming user context and working directory](pentest-screenshots/12-shell-id-pwd.png)
+![Confirming user context and working directory](12-shell-id-pwd.png)
 
 ### Privilege Escalation
 
-![local_exploit_suggester enumerating potential privilege escalation paths](pentest-screenshots/13-local-exploit-suggester.png)
+![local_exploit_suggester enumerating potential privilege escalation paths](13-local-exploit-suggester.png)
 *Methodical approach: several candidate exploits (CVE-2022-0847 DirtyPipe, pkexec, su_login, and others) were identified and tested in turn.*
 
-![A DirtyPipe exploit attempt that did not yield a session](pentest-screenshots/14-dirtypipe-attempt.png)
+![A DirtyPipe exploit attempt that did not yield a session](14-dirtypipe-attempt.png)
 
-![A pkexec exploit attempt that also failed](pentest-screenshots/15-pkexec-attempt.png)
+![A pkexec exploit attempt that also failed](15-pkexec-attempt.png)
 *Not every attempt succeeds — trial and error against multiple candidate paths is part of the real process.*
 
-![Manual SUID binary enumeration on the target](pentest-screenshots/16-suid-enumeration.png)
+![Manual SUID binary enumeration on the target](16-suid-enumeration.png)
 *Manual enumeration of SUID binaries — identified a misconfigured SUID bit on `/usr/bin/find`, the path that led to successful privilege escalation (see Key Findings for details).*
 
 ### Credential Access
 
-![Locating the wordlist used for offline password cracking](pentest-screenshots/17-wordlist-locate.png)
+![Locating the wordlist used for offline password cracking](17-wordlist-locate.png)
 
-![Downloading the wordlist for local cracking](pentest-screenshots/18-wordlist-download.png)
+![Downloading the wordlist for local cracking](18-wordlist-download.png)
 
 
 ## Key Findings
